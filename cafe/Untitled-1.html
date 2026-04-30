@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil & Bisnis Cafe</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2 class="logo">Rumah Pohon</h2>
+
+    <div class="nav-menu">
+        <a href="#" onclick="home()">Home</a>
+        <a href="#" onclick="masuk()">Profil</a>
+        <a href="#" onclick="bisnis()">Bisnis</a>
+        <a href="#" onclick="sosmed()">Sosmed</a>
+    </div>
+</div>
+
+<!-- HALAMAN AWAL -->
+<div id="login" class="full-screen">
+    <img src="ruby.jpeg" class="profile-img">
+
+    <h1>DELLIZIA RUBY</h1>
+
+    <p>
+    Mahasiswa yang memiliki passion di bidang bisnis kuliner, khususnya coffee dan dessert.
+    Berfokus membangun cafe dengan konsep aesthetic dan pengalaman pelanggan yang nyaman.
+    </p>
+
+    <button onclick="masuk()">Masuk</button>
+</div>
+
+<!-- HALAMAN PROFIL -->
+<div id="profil" style="display:none;">
+
+    <div class="box">
+        <h2>DELLIZIA RUBY</h2>
+
+        <p><strong>Hobi:</strong> Ngopi, membuat dessert, bisnis</p>
+        <p><strong>Cita-cita:</strong> Menjadi pengusaha sukses</p>
+        <p><strong>Kegiatan:</strong> Berkuliah dan part-time di kedai kopi</p>
+
+        <p><strong>Personal Branding:</strong> Aspiring Cafepreneur dengan fokus pada konsep cafe aesthetic dan pengalaman pelanggan.</p>
+
+        <p><strong>Keahlian:</strong> Basic Barista, Content Creator, Digital Marketing, Customer Service</p>
+
+        <p><strong>Pengalaman:</strong> Pernah bekerja part-time di kedai kopi dan belajar langsung tentang pelayanan serta operasional cafe.</p>
+
+        <p><strong>Visi:</strong> Membangun cafe yang bukan hanya tempat minum kopi, tapi juga tempat berbagi cerita dan pengalaman.</p>
+
+        <p><strong>Target Market:</strong> Mahasiswa, anak muda, dan pekerja yang mencari tempat nongkrong nyaman dan instagramable.</p>
+
+        <p class="quote">"Ngopi bukan sekadar minum, tapi tentang suasana dan cerita."</p>
+    </div>
+
+    <!-- BAGIAN BISNIS -->
+    <div class="box" id="bisnis">
+        <h1>Rumah Pohon</h1>
+
+        <p class="cafe-desc">
+        Café ini mengusung konsep rumah pohon yang hangat dan menyatu dengan alam. 
+        Dikelilingi pepohonan rindang, tempat ini menawarkan suasana tenang dengan sentuhan kayu alami yang estetik.
+        Cocok untuk bersantai atau menikmati kopi.
+        </p>
+
+        <div class="gallery">
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+        </div>
+
+        <h3>Menu Andalan</h3>
+        <p>☕ Coffee • 🍰 Dessert • 🧋 Non Coffee</p>
+
+        <button onclick="logout()">Kembali</button>
+    </div>
+
+</div>
+
+<!-- HALAMAN SOSMED -->
+<div id="sosmed" style="display:none;">
+
+    <div class="box">
+        <h1>Sosial Media</h1>
+
+        <p>Hubungi saya melalui platform berikut:</p>
+
+        <div class="sosmed-list">
+            <a href="https://wa.me/6289668871873" target="_blank">📱 WhatsApp</a>
+            <a href="https://instagram.com/dlzruby" target="_blank">📸 Instagram</a>
+            <a href="mailto:rubydelizia@gmail.com" target="_blank">✉️ Email</a>
+        </div>
+
+        <button onclick="home()">Kembali</button>
+    </div>
+
+</div>
+
+<script>
+function masuk() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("profil").style.display = "block";
+    document.getElementById("sosmed").style.display = "none";
+}
+
+function logout() {
+    document.getElementById("login").style.display = "flex";
+    document.getElementById("profil").style.display = "none";
+    document.getElementById("sosmed").style.display = "none";
+}
+
+function home() {
+    document.getElementById("login").style.display = "flex";
+    document.getElementById("profil").style.display = "none";
+    document.getElementById("sosmed").style.display = "none";
+}
+
+function sosmed() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("profil").style.display = "none";
+    document.getElementById("sosmed").style.display = "block";
+}
+
+function bisnis() {
+    masuk();
+    setTimeout(() => {
+        document.getElementById("bisnis").scrollIntoView({ behavior: "smooth" });
+    }, 100);
+}
+</script>
+
+</body>
+</html>
